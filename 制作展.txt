@@ -1,0 +1,10 @@
+cmd,powershellで実行する
+# 管理者で実行する
+wsl --install
+
+pcを再起動
+
+Whiresharkみたいなツールを作り、解析したデータをpython,javascriptを使ってグラフィカルに表示できるようにする
+さらに機能を付け足せれば尚良い
+
+
