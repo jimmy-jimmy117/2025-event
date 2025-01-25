@@ -54,3 +54,5 @@ sudo tshark -i インターフェース番号または名前
 ![キャプチャ実行](キャプチャ7.PNG)
 
 
+pythonのplotlyを使ってグラフ作成(簡単)
+javascriptのd3.jsを使ってグラフを作成する
