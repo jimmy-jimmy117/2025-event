@@ -15,5 +15,10 @@ sudo apt install libpcap-dev
 
 コードをファイルに保存します。例えば、capture.cという名前で保存します。
 
+Cコードをコンパイル(wsl2上のubuntuで実行)
+gcc capture.c -o capture -lpcap
+
+コンパイルが成功したら、実行します。
+sudo ./capture
 
 
