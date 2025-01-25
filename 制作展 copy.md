@@ -1,4 +1,4 @@
-
+![git cloneの画像](キャプチャ1.PNG "git cloneの画像")
 
 cmd,powershellで実行する
 # 管理者で実行する
@@ -29,9 +29,11 @@ pythonでwhiresharkを使う
 wsl2上のubuntuで仮想環境を作る
 python3 -m venv myenv
 source myenv/bin/activate
+![仮想環境立ち上げ](キャプチャ3.PNG)
 
 Pysharkをインストール
 pip install pyshark
+![Pysharkのインストール](キャプチャ2.PNG "Pysharkのインストール")
 
 codecsをインストール
 pip install codecs
@@ -40,9 +42,15 @@ codecsモジュールは、Pythonの標準ライブラリの一部です。し�
 
 UbuntuにTSharkをインストールする
 sudo apt install tshark
+![TSharkをインストール](キャプチャ4.PNG)
 
 利用可能なインターフェースのリストを表示
 sudo tshark -D
+![利用可能リストの表示](キャプチャ5.PNG)
 
 表示されたインターフェースの中からキャプチャしたいインターフェースの番号（または名前）を指定して、以下のようにTSharkを実行。
 sudo tshark -i インターフェース番号または名前
+![キャプチャ実行](キャプチャ6.PNG)
+![キャプチャ実行](キャプチャ7.PNG)
+
+
