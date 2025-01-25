@@ -7,4 +7,13 @@ pcを再起動
 Whiresharkみたいなツールを作り、解析したデータをpython,javascriptを使ってグラフィカルに表示できるようにする
 さらに機能を付け足せれば尚良い
 
+libpcap(Unix系)ライブラリをインストールする
+パッケージリストを更新します
+sudo apt update
+libpcapをインストールします
+sudo apt install libpcap-dev
+
+コードをファイルに保存します。例えば、capture.cという名前で保存します。
+
+
 
