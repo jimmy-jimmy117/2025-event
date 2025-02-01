@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packet Count by Source IP</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <svg width="800" height="600"></svg>
+
+  <script>
+    // JSONファイルの読み込み
+    d3.json("packet_data.json").then(function(data) {
+      const svg = d3.select("svg");
+
+      // 軸の設定
+      const xScale = d3.scaleBand()
+                       .domain(data.map(d => d['Source IP']))
+                       .range([0, 800])
+                       .padding(0.1);
+      const yScale = d3.scaleLinear()
+                       .domain([0, d3.max(data, d => d['Packet Count'])])
+                       .nice()
+                       .range([600, 0]);
+
+      // X軸とY軸の追加
+      svg.append("g")
+         .selectAll(".bar")
+         .data(data)
+         .enter().append("rect")
+         .attr("x", d => xScale(d['Source IP']))
+         .attr("y", d => yScale(d['Packet Count']))
+         .attr("width", xScale.bandwidth())
+         .attr("height", d => 600 - yScale(d['Packet Count']))
+         .attr("fill", "steelblue");
+
+      svg.append("g")
+         .attr("transform", "translate(0,600)")
+         .call(d3.axisBottom(xScale));
+
+      svg.append("g")
+         .call(d3.axisLeft(yScale));
+    });
+  </script>
+</body>
+</html>

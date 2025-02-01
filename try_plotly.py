@@ -26,8 +26,16 @@ df = pd.DataFrame(data, columns=["Source IP"])
 df_count = df["Source IP"].value_counts().reset_index()
 df_count.columns = ["Source IP", "Packet Count"]
 
+"""
 # Plotlyでグラフ作成
 fig = px.bar(
     df_count, x="Source IP", y="Packet Count", title="Packet Count by Source IP"
 )
 fig.show()
+"""
+
+import json
+
+# データをJSON形式で保存
+with open("packet_data.json", "w") as json_file:
+    json.dump(df_count.to_dict(orient="records"), json_file)
