@@ -55,4 +55,8 @@ sudo tshark -i インターフェース番号または名前
 
 
 pythonのplotlyを使ってグラフ作成(簡単)
+pip install plotly
+
+
+
 javascriptのd3.jsを使ってグラフを作成する
