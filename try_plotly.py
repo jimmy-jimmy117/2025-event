@@ -11,7 +11,7 @@ cap = pyshark.LiveCapture(interface="any")
 data = []
 
 # パケットキャプチャの開始
-for packet in cap.sniff_continuously(packet_count=1000):  # 100パケットだけキャプチャ
+for packet in cap.sniff_continuously(packet_count=500):  # 100パケットだけキャプチャ
     try:
         # IPソースアドレスを抽出
         src_ip = packet.ip.src
@@ -26,13 +26,11 @@ df = pd.DataFrame(data, columns=["Source IP"])
 df_count = df["Source IP"].value_counts().reset_index()
 df_count.columns = ["Source IP", "Packet Count"]
 
-"""
 # Plotlyでグラフ作成
 fig = px.bar(
     df_count, x="Source IP", y="Packet Count", title="Packet Count by Source IP"
 )
 fig.show()
-"""
 
 import json
 
